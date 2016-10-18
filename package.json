@@ -1,7 +1,7 @@
 {
-  "name": "simple-react-boilerplate",
+  "name": "react-tutorial",
   "version": "1.0.0",
-  "description": "A simple react boilerplate for node.",
+  "description": "Code along with the React Tutorial.",
   "main": "index.js",
   "scripts": {
     "production": "webpack -p",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sjm-practice/simple-react-boilerplate.git"
+    "url": "git+https://github.com/sjm-practice/react-tutorial.git"
   },
   "keywords": [
     "node",
@@ -19,9 +19,9 @@
   "author": "Steve Marsh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sjm-practice/simple-react-boilerplate/issues"
+    "url": "https://github.com/sjm-practice/react-tutorial/issues"
   },
-  "homepage": "https://github.com/sjm-practice/simple-react-boilerplate#readme",
+  "homepage": "https://github.com/sjm-practice/react-tutorial#readme",
   "devDependencies": {
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.5",
