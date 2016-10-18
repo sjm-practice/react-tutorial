@@ -3,9 +3,6 @@ logs
 *.log
 npm-debug.log*
 
-# Webpack bundle directory
-dist
-
 # Dependency directories
 node_modules
 
