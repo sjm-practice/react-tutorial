@@ -1,5 +1,6 @@
-# simple-react-boilerplate
-This is a very simple react boilerplate, for node, pretty much a hello world.
+# React Tutorial
 
-Much of this boilerplate is based on what was learned in Tyler McGinnis' [React.js Fundamentals course](http://www.reactjsprogram.com/).
+This project is a code along exercise for learning React. It is following the official [tutorial](https://facebook.github.io/react/docs/tutorial.html), and was started with a [simple react boilerplate](https://github.com/sjm-practice/simple-react-boilerplate).
 
+## Notes
+*...
