@@ -1,7 +1,9 @@
 const CommentBox = () => {
   return (
     <div className="commentBox">
-      Hello world! Comment box.
+      <h1>Comments</h1>
+      <CommentList />
+      <CommentForm />
     </div>
   );
 };
