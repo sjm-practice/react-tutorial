@@ -16,9 +16,7 @@ class CommentBoxContainer extends React.Component {
       dataType: "json",
       cache: false,
       success: function (data) {
-        this.setState({
-          data: data,
-        });
+        this.setState({ data });
       }.bind(this),
       error: function (xhr, status, err) {
         console.error(this.props.dataApiUrl, status, err.toString());
@@ -27,7 +25,18 @@ class CommentBoxContainer extends React.Component {
   }
 
   handleCommentSubmit(comment) {
-    // TODO: submit comment to server and refresh list
+    $.ajax({
+      url: this.props.dataApiUrl,
+      dataType: "json",
+      type: "POST",
+      data: comment,
+      success: function (data) {
+        this.setState({ data });
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   }
 
   componentDidMount() {
@@ -37,7 +46,10 @@ class CommentBoxContainer extends React.Component {
 
   render() {
     return (
-      <CommentBox data={this.state.data} onCommentSubmit={this.handleCommentSubmit} />
+      <CommentBox
+        data={this.state.data}
+        onCommentSubmit={(comment) => this.handleCommentSubmit(comment)}
+      />
     );
   }
 }
