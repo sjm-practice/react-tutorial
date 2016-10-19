@@ -26,6 +26,10 @@ class CommentBoxContainer extends React.Component {
     });
   }
 
+  handleCommentSubmit(comment) {
+    // TODO: submit comment to server and refresh list
+  }
+
   componentDidMount() {
     this.loadCommentsFromServer();
     setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
@@ -33,7 +37,7 @@ class CommentBoxContainer extends React.Component {
 
   render() {
     return (
-      <CommentBox data={this.state.data} />
+      <CommentBox data={this.state.data} onCommentSubmit={this.handleCommentSubmit} />
     );
   }
 }

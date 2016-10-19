@@ -22,18 +22,14 @@ class CommentFormContainer extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const author = this.state.author.trim();
-    const text = this.state.author.trim();
+    const text = this.state.text.trim();
 
     if (!author || !text) {
       return;
     }
 
-    // TODO: send request to server
-    this.setState({
-      author: "",
-      text: "",
-    });
-    console.log("submit handled!");
+    this.props.onCommentSubmit({ author, text });
+    this.setState({ author: "", text: "" });
   }
 
   render() {
@@ -48,3 +44,7 @@ class CommentFormContainer extends React.Component {
     );
   }
 }
+
+CommentFormContainer.propTypes = {
+  onCommentSubmit: React.PropTypes.func.isRequired,
+};
