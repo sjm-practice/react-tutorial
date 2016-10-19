@@ -22,8 +22,8 @@ class CommentFormContainer extends React.Component {
   render() {
     return (
       <CommentForm
-        onAuthorChange={(e) => this.handleAuthorChange(e)}
-        onTextChange={(e) => this.handleTextChange(e)}
+        handleAuthorChange={(e) => this.handleAuthorChange(e)}
+        handleTextChange={(e) => this.handleTextChange(e)}
         author={this.state.author}
         text={this.state.text}
       />
