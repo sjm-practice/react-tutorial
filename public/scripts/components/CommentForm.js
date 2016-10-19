@@ -1,6 +1,6 @@
 const CommentForm = (props) => {
   return (
-    <form className="commentForm">
+    <form className="commentForm" onSubmit={props.handleSubmit}>
       <input
         type="text"
         placeholder="Your Name"
@@ -21,6 +21,7 @@ const CommentForm = (props) => {
 CommentForm.propTypes = {
   handleAuthorChange: React.PropTypes.func.isRequired,
   handleTextChange: React.PropTypes.func.isRequired,
+  handleSubmit: React.PropTypes.func.isRequired,
   author: React.PropTypes.string.isRequired,
   text: React.PropTypes.string.isRequired,
 };
