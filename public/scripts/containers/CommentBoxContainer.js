@@ -25,6 +25,16 @@ class CommentBoxContainer extends React.Component {
   }
 
   handleCommentSubmit(comment) {
+    /**
+     * optimistically add new comment to comment list. it will be replaced by server
+     * comment list once request to server is complete, and the new comment list
+     * is polled.
+     */
+    const comments = this.state.data;
+    comment.id = Date.now();   // set a temporary unique on the new comment
+    let newComments = comments.concat([comment]); // note concat returns a new array, not sure if necessary
+    this.setState({ data: newComments })
+
     $.ajax({
       url: this.props.dataApiUrl,
       dataType: "json",
@@ -34,6 +44,7 @@ class CommentBoxContainer extends React.Component {
         this.setState({ data });
       }.bind(this),
       error: function (xhr, status, err) {
+        this.setState({ data: comments });    // restore state to comments prior to error
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
